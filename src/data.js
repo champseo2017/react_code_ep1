@@ -20,7 +20,7 @@ export default [
     diet: ["plants"],
     additional: {
       notes: "There are three different species of zebra.",
-      link: "https://en.wikipedia.org/wiki/Zebra",
+      link: "https://en.wikipedia.org/wiki/Zebra"
     },
     name: "Zebra",
     scientificName: "Equus quagga",
