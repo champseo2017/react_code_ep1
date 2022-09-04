@@ -1,23 +1,37 @@
 import logo from './logo.svg';
+import data from './data'
+import AnimalCard from './components/AnimalCard/AnimalCard'
 import './App.css';
+
+const showAdditional = (additional) => {
+  if (additional) {
+    const alertInformation = Object.entries(additional)
+  .map((information) => {
+    return `${information[0]}: ${information[1]}`
+  })
+  .join('\n');
+  
+  alert(alertInformation)
+  }
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <h1>Animals</h1>
+      {
+        data.map(animal => (
+          <AnimalCard 
+            key={animal.name}
+            name={animal.name}
+            additional={animal.additional}
+            scientificName={animal.scientificName}
+            diet={animal.diet}
+            size={animal.size}
+            showAdditional={showAdditional}
+          />
+        ))
+      }
     </div>
   );
 }
