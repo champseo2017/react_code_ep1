@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import data from './data'
+import animal from './data'
 import AnimalCard from './components/AnimalCard/AnimalCard'
 import './App.css';
 
@@ -18,20 +18,12 @@ const showAdditional = (additional) => {
 function App() {
   return (
     <div className="wrapper">
-      <h1>Animals</h1>
-      {
-        data.map(animal => (
-          <AnimalCard 
-            key={animal.name}
-            name={animal.name}
-            additional={animal.additional}
-            scientificName={animal.scientificName}
-            diet={animal.diet}
-            size={animal.size}
-            showAdditional={showAdditional}
-          />
-        ))
-      }
+      {animal.map(animal => <AnimalCard
+        diet={animal.diet}
+        key={animal.name}
+        name={animal.name}
+        size={animal.size}
+      />)}
     </div>
   );
 }
