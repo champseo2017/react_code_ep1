@@ -15,10 +15,13 @@ const convertFood = (food) => {
 }
 
 
-const AnimalDetails = ({ diet }) => {
+const AnimalDetails = ({ diet, scientificName }) => {
   return (
     <div className='details'>
       <h4>Details:</h4>
+      <div>
+       ScientificName Name: {scientificName}.
+      </div>
       <div>
         Diet: {diet.map(food => convertFood(food)).join(' ')}
       </div>
@@ -27,7 +30,8 @@ const AnimalDetails = ({ diet }) => {
 }
 
 AnimalDetails.propTypes = {
-  diet: PropTypes.arrayOf(PropTypes.string).isRequired
+  diet: PropTypes.arrayOf(PropTypes.string).isRequired,
+  scientificName: PropTypes.string.isRequired,
 }
 
 export default AnimalDetails
