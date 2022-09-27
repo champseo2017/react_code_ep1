@@ -20,8 +20,32 @@ const showAdditional = (additional) => {
 function App() {
  
   /* 
-   การสร้างค่าอ้างอิงแบบอาร์เรย์
+
+
+   Array Destructuring
+   let [a, b, c] = [1, 2, 3]
+   console.log(a)
+   console.log(b)
+   console.log(c)
+
+   การแทนส่วนที่เหลือด้วย Spread Operator(...)
+    - ป้องกันกรณีที่มีจำนวนสมาชิกในอาร์เรย์ไม่ครบตามจำนวนตัวแปร
+    - การกำหนดค่าดีฟอลต์แทนค่าที่อาจขาดหายไป
+
+
   */
+
+    let [a, b] = [1, 2, 3, 4, 5]
+    // a = 1, b = 2
+
+    let [c, d, ...e] = [6, 7, 8, 9]
+    // c = 6, d = 7, e = [8, 9], e[0] = 8, e[1] = 9
+
+    let [f, g, h = 12, i] = [10, 11]
+    // f = 10, g = 11, h = 12, i = undefined
+
+
+
   return (
     <>
      <RefsArray />
