@@ -1,6 +1,14 @@
-import { useRef } from 'react'
+import React, { useRef } from 'react'
+
+import {
+  userContext
+} from '../context'
 
 const RefsArray = () => {
+
+  const user = React.useContext(userContext)
+
+  console.log('user', user)
 
   const table = useRef()
   const tr = useRef([])
