@@ -1,5 +1,9 @@
 import { useRef, useEffect } from "react";
 
+import {
+  userContext
+} from './context'
+
 import logo from "./logo.svg";
 import animal from "./data";
 import AnimalCard from "./components/AnimalCard/AnimalCard";
